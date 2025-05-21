@@ -1,5 +1,6 @@
 #pragma once
 #include "linked_list.hpp"
+#include "memory_bus.hpp"
 #include <vector>
 #include <optional>
 #include <functional>

@@ -1,0 +1,1 @@
+/opt/homebrew/Cellar/llvm/20.1.2/bin/clang++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_riscv.dir/main.cpp.o -o test_riscv  libriscvcpp.a

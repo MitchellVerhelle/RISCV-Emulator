@@ -1,0 +1,4 @@
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/riscvcpp.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/test_riscv.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/edit_cache.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/rebuild_cache.dir
