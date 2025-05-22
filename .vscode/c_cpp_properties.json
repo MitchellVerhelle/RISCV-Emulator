@@ -4,9 +4,19 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${vcpkgRoot}/arm64-osx/include"
+                "${vcpkgRoot}/arm64-osx/include",
+                "~/emsdk/upstream/emscripten/system/include",
+                "~/emsdk/upstream/emscripten/system/lib/libcxx/include",
+                "~/emsdk/upstream/emscripten/cache/sysroot/include",
+                "~/emsdk/upstream/emscripten/cache/sysroot/include/SDL"
+                // "${env:EMSDK}/upstream/emscripten/system/include",
+                // "${env:EMSDK}/upstream/emscripten/system/lib/libcxx/include",
+                // "${env:EMSDK}/upstream/emscripten/cache/sysroot/include",
+                // "${env:EMSDK}/upstream/emscripten/cache/sysroot/include/SDL"
             ],
-            "defines": [],
+            "defines": [
+                "__EMSCRIPTEN__"
+            ],
             "compilerPath": "/opt/homebrew/Cellar/llvm/20.1.2/bin/clang++",
             "cStandard": "c17",
             "cppStandard": "c++23",

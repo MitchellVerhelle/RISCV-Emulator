@@ -219,7 +219,7 @@ RISCVCpp_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 RISCVCpp_SOURCE_DIR:STATIC=/Users/mitchellverhelle/C++ Class/Emulator
 
-//Enable thread-safe cache lines
+//Enable thread‑safe cache lines
 USE_THREADS:BOOL=ON
 
 

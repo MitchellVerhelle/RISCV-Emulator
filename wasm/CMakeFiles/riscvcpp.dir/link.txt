@@ -1,0 +1,2 @@
+/Users/mitchellverhelle/emsdk/upstream/emscripten/emar qc libriscvcpp.a CMakeFiles/riscvcpp.dir/src/cache.cpp.o CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.o CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o CMakeFiles/riscvcpp.dir/src/riscv.cpp.o
+/Users/mitchellverhelle/emsdk/upstream/emscripten/emranlib libriscvcpp.a

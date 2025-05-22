@@ -1,6 +1,8 @@
 #pragma once
 #include <atomic>
 #include <format>
+#include <string>
+#include <format>
 
 namespace rv {
 
@@ -12,7 +14,7 @@ struct CacheStats
     std::atomic<std::uint64_t> n_cpu_accesses{0};
 
     [[nodiscard]] double hit_rate()  const noexcept
-    { return n_hits  ? static_cast<double>(n_hits)  / n_cpu_accesses : 0.0; }
+    { return n_hits ? static_cast<double>(n_hits) / static_cast<double>(n_cpu_accesses) : 0.0; }
     [[nodiscard]] double miss_rate() const noexcept { return 1.0 - hit_rate(); }
 
     std::string pretty() const
