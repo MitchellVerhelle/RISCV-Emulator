@@ -1,0 +1,46 @@
+CMakeFiles/riscvcpp.dir/src/demo_loop.cpp.o: \
+  /Users/mitchellverhelle/C++\ Class/Emulator/src/demo_loop.cpp \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/emscripten.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_asm.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_macros.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_types.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdbool.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config_site \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/abi.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/compiler.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/platform.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/availability.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/language.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/stdbool.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/stdbool.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_js.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/promise.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdlib.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/wget.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/version.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdio \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdio.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/stdio.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/wasi/api.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stddef.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/stddef.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/stddef.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_header_macro.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_size_t.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_wchar_t.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_null.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_nullptr_t.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_max_align_t.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/__stddef_offsetof.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdint.h \
+  /Users/mitchellverhelle/emsdk/upstream/lib/clang/21/include/stdint.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/stdint.h \
+  /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h

@@ -65,9 +65,12 @@ class HashTable : public MemoryBus
 
     static constexpr float max_load = 0.7f;
 
-    void maybe_rehash()
+    inline void maybe_rehash()
     {
-        if (static_cast<float>(size_) / buckets_.size() < max_load) return;
+        constexpr float max_load = 0.75f;
+        if (static_cast<float>(size_) /
+            static_cast<float>(buckets_.size()) < max_load)
+            return;
 
         std::vector<Bucket> old = std::move(buckets_);
         buckets_.assign(old.size()*2, {});

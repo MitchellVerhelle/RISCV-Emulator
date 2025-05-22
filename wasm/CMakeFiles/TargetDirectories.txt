@@ -1,0 +1,4 @@
+/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles/riscvcpp.dir
+/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles/rv_game.dir
+/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles/edit_cache.dir
+/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles/rebuild_cache.dir

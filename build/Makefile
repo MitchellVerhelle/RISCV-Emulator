@@ -215,6 +215,30 @@ src/cache_stats.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s
 .PHONY : src/cache_stats.cpp.s
 
+src/emulator.o: src/emulator.cpp.o
+.PHONY : src/emulator.o
+
+# target to build an object file
+src/emulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.o
+.PHONY : src/emulator.cpp.o
+
+src/emulator.i: src/emulator.cpp.i
+.PHONY : src/emulator.i
+
+# target to preprocess a source file
+src/emulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.i
+.PHONY : src/emulator.cpp.i
+
+src/emulator.s: src/emulator.cpp.s
+.PHONY : src/emulator.s
+
+# target to generate assembly for a file
+src/emulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.s
+.PHONY : src/emulator.cpp.s
+
 src/hash_table.o: src/hash_table.cpp.o
 .PHONY : src/hash_table.o
 
@@ -263,6 +287,30 @@ src/linked_list.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/linked_list.cpp.s
 .PHONY : src/linked_list.cpp.s
 
+src/mmio_window.o: src/mmio_window.cpp.o
+.PHONY : src/mmio_window.o
+
+# target to build an object file
+src/mmio_window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o
+.PHONY : src/mmio_window.cpp.o
+
+src/mmio_window.i: src/mmio_window.cpp.i
+.PHONY : src/mmio_window.i
+
+# target to preprocess a source file
+src/mmio_window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.i
+.PHONY : src/mmio_window.cpp.i
+
+src/mmio_window.s: src/mmio_window.cpp.s
+.PHONY : src/mmio_window.s
+
+# target to generate assembly for a file
+src/mmio_window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.s
+.PHONY : src/mmio_window.cpp.s
+
 src/riscv.o: src/riscv.cpp.o
 .PHONY : src/riscv.o
 
@@ -306,12 +354,18 @@ help:
 	@echo "... src/cache_stats.o"
 	@echo "... src/cache_stats.i"
 	@echo "... src/cache_stats.s"
+	@echo "... src/emulator.o"
+	@echo "... src/emulator.i"
+	@echo "... src/emulator.s"
 	@echo "... src/hash_table.o"
 	@echo "... src/hash_table.i"
 	@echo "... src/hash_table.s"
 	@echo "... src/linked_list.o"
 	@echo "... src/linked_list.i"
 	@echo "... src/linked_list.s"
+	@echo "... src/mmio_window.o"
+	@echo "... src/mmio_window.i"
+	@echo "... src/mmio_window.s"
 	@echo "... src/riscv.o"
 	@echo "... src/riscv.i"
 	@echo "... src/riscv.s"

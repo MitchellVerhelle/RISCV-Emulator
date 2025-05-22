@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/Users/mitchellverhelle/C++ Class/Emulator/include"
 
-CXX_FLAGSarm64 = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+CXX_FLAGSarm64 = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wall -Wextra -Wpedantic -Wconversion
 
-CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wall -Wextra -Wpedantic -Wconversion
 
