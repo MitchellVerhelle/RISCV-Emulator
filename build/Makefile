@@ -215,30 +215,6 @@ src/cache_stats.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s
 .PHONY : src/cache_stats.cpp.s
 
-src/emulator.o: src/emulator.cpp.o
-.PHONY : src/emulator.o
-
-# target to build an object file
-src/emulator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.o
-.PHONY : src/emulator.cpp.o
-
-src/emulator.i: src/emulator.cpp.i
-.PHONY : src/emulator.i
-
-# target to preprocess a source file
-src/emulator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.i
-.PHONY : src/emulator.cpp.i
-
-src/emulator.s: src/emulator.cpp.s
-.PHONY : src/emulator.s
-
-# target to generate assembly for a file
-src/emulator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/emulator.cpp.s
-.PHONY : src/emulator.cpp.s
-
 src/hash_table.o: src/hash_table.cpp.o
 .PHONY : src/hash_table.o
 
@@ -354,9 +330,6 @@ help:
 	@echo "... src/cache_stats.o"
 	@echo "... src/cache_stats.i"
 	@echo "... src/cache_stats.s"
-	@echo "... src/emulator.o"
-	@echo "... src/emulator.i"
-	@echo "... src/emulator.s"
 	@echo "... src/hash_table.o"
 	@echo "... src/hash_table.i"
 	@echo "... src/hash_table.s"

@@ -147,12 +147,12 @@ inline void Cache::fill_line(std::size_t set, std::size_t way, Address addr)
     /* write‑back dirty victim */
     if (cl.valid && cl.dirty)
         for (std::size_t i=0;i<line_words;++i)
-            next_->store_word(((cl.tag<<6)|set)<<line_shift | (i<<2), cl.words[i]);
+            next_->store_word(static_cast<std::uint32_t>(((cl.tag<<6)|set)<<line_shift | (i<<2)), cl.words[i]);
 
     stats_.n_evictions += cl.valid;
     Address base = addr & ~( (1u<<line_shift)-1 );
     for (std::size_t i=0;i<line_words;++i)
-        cl.words[i] = next_->load_word(base | (i<<2)).value_or(0);
+        cl.words[i] = next_->load_word(static_cast<std::uint32_t>(base | (i<<2))).value_or(0);
 
     cl.tag   = tag(addr);
     cl.valid = true;

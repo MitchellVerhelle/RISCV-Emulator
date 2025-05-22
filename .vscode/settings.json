@@ -57,6 +57,10 @@
         "deque": "cpp",
         "execution": "cpp",
         "forward_list": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "bit": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "algorithm": "cpp"
     }
 }

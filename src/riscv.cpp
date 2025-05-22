@@ -73,8 +73,13 @@ void RiscV::step()
         {
             bool take{};
             switch (d.funct3) {
-                case 0: take = regs_[d.rs1]==regs_[d.rs2]; break; // beq
-                default: throw std::runtime_error("Unimpl BRANCH");
+                case 0:  take = regs_[d.rs1] == regs_[d.rs2]; break;          // BEQ
+                case 1:  take = regs_[d.rs1] != regs_[d.rs2]; break;          // BNE
+                case 4:  take = static_cast<int32_t>(regs_[d.rs1]) <  static_cast<int32_t>(regs_[d.rs2]); break; // BLT
+                case 5:  take = static_cast<int32_t>(regs_[d.rs1]) >= static_cast<int32_t>(regs_[d.rs2]); break; // BGE
+                case 6:  take = regs_[d.rs1]           <  regs_[d.rs2]; break; // BLTU
+                case 7:  take = regs_[d.rs1]           >= regs_[d.rs2]; break; // BGEU
+                default: throw std::runtime_error("Unimpl BRANCH funct3");
             }
             pc_ += static_cast<std::uint32_t>( take ? d.imm : 4 );
         }
