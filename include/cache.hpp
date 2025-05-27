@@ -10,7 +10,9 @@
 
 namespace rv {
 
-/** Simple N‑way set‑associative cache. */
+/*
+Simple N-way set-associative cache.
+*/
 class Cache : public MemoryBus
 {
   public:
@@ -30,12 +32,16 @@ class Cache : public MemoryBus
       lru_lock_{ std::make_unique<std::atomic_flag[]>(sets) },
       next_{std::move(next)}
 {
-    for (std::size_t i = 0; i < sets_; ++i) lru_lock_[i].clear();
+    for (std::size_t i = 0; i < sets_; ++i) {
+        lru_lock_[i].clear();
+    }
 }
 
-    /* MemoryBus ----------------------------------------------------- */
+    /*
+    MemoryBus
+    */
     std::optional<std::uint32_t> load_word(Address addr) override;
-    bool                         store_word(Address addr, std::uint32_t v) override;
+    bool store_word(Address addr, std::uint32_t v) override;
 
     [[nodiscard]] CacheStats const& stats() const noexcept { return stats_; }
 
@@ -44,33 +50,42 @@ class Cache : public MemoryBus
     const std::size_t ways_;
     const WritePolicy policy_;
 
-    std::vector<CacheLine> data_;              // flat [set*ways + way]
-    std::vector<std::size_t> lru_way_;         // per‑set MRU tracker
+    std::vector<CacheLine> data_; // flat [set*ways + way]
+    std::vector<std::size_t> lru_way_; // per-set MRU tracker
     std::unique_ptr<std::atomic_flag[]> lru_lock_;
 
     std::unique_ptr<MemoryBus> next_;
-    CacheStats                 stats_;
+    CacheStats stats_;
 
-    /* helpers ------------------------------------------------------- */
+    /*
+    helpers
+    */
     static constexpr std::size_t line_words = 4;
-    static constexpr std::size_t line_shift = 4;    // 16‑byte line
+    static constexpr std::size_t line_shift = 4; // 16-byte line
 
-    [[nodiscard]] static std::uint32_t tag(Address a)   noexcept { return a >> (line_shift+6); }
-    [[nodiscard]] std::size_t          index(Address a) const noexcept
+    [[nodiscard]] static std::uint32_t tag(Address a) noexcept
+    {
+        return a >> (line_shift+6);
+    }
+
+    [[nodiscard]] std::size_t index(Address a) const noexcept
     {
         return (a >> line_shift) & (sets_ - 1);
     }
+
     [[nodiscard]] std::size_t slot(std::size_t set, std::size_t way) const noexcept
-    { return set * ways_ + way; }
+    {
+        return set * ways_ + way;
+    }
 
     void touch_lru(std::size_t set, std::size_t way) noexcept;
     std::size_t select_victim(std::size_t set) noexcept;
     void fill_line(std::size_t set, std::size_t way, Address addr);
 };
 
-/* ------------------------------------------------------------------ */
-/*  Implementation                                                    */
-/* ------------------------------------------------------------------ */
+/*
+Implementation
+*/
 inline void Cache::touch_lru(std::size_t set, std::size_t way) noexcept
 {
     while (lru_lock_[set].test_and_set(std::memory_order_acquire)) ; // spin
@@ -80,7 +95,7 @@ inline void Cache::touch_lru(std::size_t set, std::size_t way) noexcept
 
 inline std::size_t Cache::select_victim(std::size_t set) noexcept
 {
-    /* ranges pipeline: 0..ways‑1 | filter(!mru) | take(1) */
+    // ranges pipeline: 0..ways-1 | filter(!mru) | take(1)
     auto ways = std::views::iota(std::size_t{0}, ways_);
     auto cand = ways | std::views::filter([&](std::size_t w){return w!=lru_way_[set];});
     return cand.empty() ? 0 : *cand.begin();
@@ -104,7 +119,7 @@ inline std::optional<std::uint32_t> Cache::load_word(Address addr)
         return line.words[(addr >> 2) & (line_words-1)];
     }
 
-    /* miss --------------------------------------------------------- */
+    // miss
     ++stats_.n_misses;
     std::size_t victim = select_victim(set);
     fill_line(set, victim, addr);
@@ -132,7 +147,7 @@ inline bool Cache::store_word(Address addr, std::uint32_t v)
         return true;
     }
 
-    /* write‑miss => write‑allocate, then retry as hit */
+    // write-miss => write-allocate, then retry as hit
     ++stats_.n_misses;
     std::size_t victim = select_victim(set);
     fill_line(set, victim, addr);
@@ -142,9 +157,9 @@ inline bool Cache::store_word(Address addr, std::uint32_t v)
 inline void Cache::fill_line(std::size_t set, std::size_t way, Address addr)
 {
     std::size_t sl = slot(set, way);
-    CacheLine& cl  = data_[sl];
+    CacheLine& cl = data_[sl];
 
-    /* write‑back dirty victim */
+    // write-back dirty victim
     if (cl.valid && cl.dirty)
         for (std::size_t i=0;i<line_words;++i)
             next_->store_word(static_cast<std::uint32_t>(((cl.tag<<6)|set)<<line_shift | (i<<2)), cl.words[i]);
@@ -154,7 +169,7 @@ inline void Cache::fill_line(std::size_t set, std::size_t way, Address addr)
     for (std::size_t i=0;i<line_words;++i)
         cl.words[i] = next_->load_word(static_cast<std::uint32_t>(base | (i<<2))).value_or(0);
 
-    cl.tag   = tag(addr);
+    cl.tag = tag(addr);
     cl.valid = true;
     cl.dirty = false;
     touch_lru(set, way);

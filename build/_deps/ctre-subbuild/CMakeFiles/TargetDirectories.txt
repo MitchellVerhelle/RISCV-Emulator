@@ -1,0 +1,3 @@
+/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/ctre-populate.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/edit_cache.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/rebuild_cache.dir

@@ -96,6 +96,8 @@ test_riscv_EXTERNAL_OBJECTS =
 test_riscv: CMakeFiles/test_riscv.dir/main.cpp.o
 test_riscv: CMakeFiles/test_riscv.dir/build.make
 test_riscv: libriscvcpp.a
+test_riscv: /opt/homebrew/opt/libomp/lib/libomp.dylib
+test_riscv: /opt/homebrew/opt/tbb/lib/libtbb.12.15.dylib
 test_riscv: CMakeFiles/test_riscv.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_riscv"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_riscv.dir/link.txt --verbose=$(VERBOSE)

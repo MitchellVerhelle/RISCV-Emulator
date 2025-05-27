@@ -19,8 +19,7 @@ struct CacheStats
 
     std::string pretty() const
     {
-        return std::format("Hits {:8}, Misses {:8}  =>  HR {:5.2f}%",
-                           n_hits.load(), n_misses.load(), hit_rate()*100.0);
+        return std::format("Hits {:8}, Misses {:8}  =>  HR {:5.2f}%", n_hits.load(), n_misses.load(), hit_rate()*100.0);
     }
 };
 

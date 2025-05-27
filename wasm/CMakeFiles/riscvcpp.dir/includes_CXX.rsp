@@ -1,1 +1,1 @@
--I"/Users/mitchellverhelle/C++ Class/Emulator/include"
+-I"/Users/mitchellverhelle/C++ Class/Emulator/include" -I/opt/homebrew/Cellar/onedpl/2022.8.0/include -I"/Users/mitchellverhelle/C++ Class/Emulator/wasm/_deps/ctre-src/single-header"

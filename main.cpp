@@ -1,62 +1,92 @@
-#include "hash_table.hpp"
+#include "concurrent_hash_table.hpp"
 #include "cache.hpp"
 #include "riscv.hpp"
+#include "rv_assembler.hpp"
+#include "cache_stats_formatter.hpp"
 #include <cassert>
 #include <format>
 #include <iostream>
+#include <exception>
+#ifndef __EMSCRIPTEN__
+#  include <oneapi/dpl/execution>
+#  include <oneapi/dpl/algorithm>
+#  include <oneapi/dpl/iterator>
+#else
+#  include <algorithm> // std::for_each fallback
+#endif
+#include <chrono>
 
 using rv::Cache;
-using rv::HashTable;
-using rv::MemoryBus;
+using rv::ConcurrentHashTable;
 using rv::RiscV;
-
-/* ---------------------------------------------------------------
-   Assembled test program (text‑book layout)
-
-   addr  instr                       machine‑code
-   ----  --------------------------  ------------
-   0x00: addi x1, x0, 11             0x00b00093
-   0x04: addi x2, x0, 0              0x00000113
-   0x08: addi x3, x0, 1              0x00100193
-   0x0c: add  x2, x2, x3             0x00310133   ; sum += i
-   0x10: addi x3, x3, 1              0x00118193   ; i++
-   0x14: bne  x3, x1, -8             0xfe119ce3   ; loop if i != 10
-   0x18: sw   x2, 32(x0)             0x02202023   ; store result
-   0x1c: jalr x0, x0, 0              0x00000067   ; halt
- ----------------------------------------------------------------*/
-constexpr std::uint32_t prog[] = {
-    0x00B00093, 0x00000113, 0x00100193, 0x00310133,
-    0x00118193, 0xfe119ce3, 0x02202023, 0x00000067
-};
-
+using namespace std::chrono;
 int main()
 {
-    /* -------------------- build memory hierarchy ---------------- */
-    auto dram = std::make_unique<HashTable<std::uint32_t, std::uint32_t>>();
+    auto dram = std::make_unique<ConcurrentHashTable<std::uint32_t,std::uint32_t>>();
     auto l1   = std::make_unique<Cache>(64, 2, std::move(dram));
-    RiscV cpu{*l1};
+    RiscV cpu{ *l1 };
 
-    /* -------------------- load program into DRAM ---------------- */
-    for (std::size_t i = 0; i < std::size(prog); ++i)
-        l1->store_word(static_cast<std::uint32_t>(i * 4), prog[i]);
+    // load program
+    constexpr std::string_view asm_src = R"(
+start:
+    addi x1, x0, 11       # loop upper-bound (exclusive)
+    addi x2, x0, 0        # sum
+    addi x3, x0, 1        # i = 1
+loop:
+    add  x2, x2, x3
+    addi x3, x3, 1
+    bne  x3, x1, loop
+    sw   x2, 32(x0)
+    jalr x0, x0, 0        # halt
+)";
 
-    /* run until we hit the self‑loop @0x1c */
-    while (cpu.pc() != 0x1c)
+    auto words = rv::assemble(asm_src); // assemble the program (throws on error)
+    std::uint32_t base = 0;
+    auto t_load_start = high_resolution_clock::now();
+
+#ifdef __EMSCRIPTEN__
+    for (std::size_t i = 0; i < words.size(); ++i) {
+        l1->store_word(base + static_cast<std::uint32_t>(i * 4), words[i]);
+    }
+#else
+    auto first = oneapi::dpl::counting_iterator<std::size_t>(0);
+    auto last  = first + static_cast<std::uint32_t>(words.size());
+    oneapi::dpl::for_each(oneapi::dpl::execution::par_unseq,
+        first, last,
+        [&](std::size_t i) {
+            l1->store_word(base + static_cast<std::uint32_t>(i * 4), words[i]);
+        });
+#endif
+    
+    auto t_load_end = high_resolution_clock::now();
+    auto load_ms = duration_cast<microseconds>(t_load_end - t_load_start).count();
+    std::cout << std::format("Load time      : {} us\n", load_ms); // 963 us
+    
+    
+    constexpr std::uint32_t expected = 55; // 1 + ... + 10 = 55
+    auto t_exec_start = high_resolution_clock::now();
+    // run program
+    while (cpu.pc() != static_cast<std::uint32_t>((words.size() - 1) * 4))
         cpu.step();
+    // verify result
+    const std::uint32_t sum_reg = cpu.reg(2);
+    const std::uint32_t sum_mem = l1->load_word(32).value_or(0);
 
-    /* -------------------- validate results ---------------------- */
-    const std::uint32_t expected = 55;              // 1‥10 triangular sum
-    const std::uint32_t sum_reg  = cpu.reg(2);
-    const std::uint32_t sum_mem  = l1->load_word(32).value_or(0);
+    auto t_exec_end = high_resolution_clock::now();
+    auto exec_ms = duration_cast<microseconds>(t_exec_end - t_exec_start).count();
+    std::cout << std::format("Execution time : {} us\n\n", exec_ms); // 3 us
 
     std::cout << std::format(
-        "x2  = {:3}   (expected 55)\n"
-        "MEM = {:3}   (expected 55)\n{}\n",
-        sum_reg, sum_mem, l1->stats().pretty());
+        "x2  = {:3} (expected 55)\n"
+        "MEM = {:3} (expected 55)\n\n",
+        sum_reg, sum_mem);
+    
+    
+    // pretty print cache stats
+    std::cout << std::format("Single-line: {}\n", l1->stats());
+    std::cout << std::format("\nFull block:\n{:full}", l1->stats());
 
-    assert(sum_reg == expected && "x2 holds wrong sum");
-    assert(sum_mem == expected && "memory[32] holds wrong sum");
-
-    std::cout << "All tests passed ✔︎\n";
+    assert(sum_reg == expected && sum_mem == expected);
+    std::cout << "\nAll tests passed! \n";
     return 0;
 }

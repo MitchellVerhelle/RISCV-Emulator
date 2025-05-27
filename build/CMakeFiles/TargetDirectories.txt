@@ -1,4 +1,6 @@
 /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/riscvcpp.dir
 /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/test_riscv.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/cache_stats_demo.dir
+/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/parallel_stress.dir
 /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/edit_cache.dir
 /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/rebuild_cache.dir

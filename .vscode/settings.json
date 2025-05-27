@@ -61,6 +61,10 @@
         "bit": "cpp",
         "charconv": "cpp",
         "format": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__mutex_base": "cpp",
+        "ostream": "cpp",
+        "shared_mutex": "cpp",
+        "thread": "cpp"
     }
 }

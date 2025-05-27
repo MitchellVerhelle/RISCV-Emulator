@@ -2,10 +2,9 @@
 
 namespace text {
 
-/*------------------------------------------------
-  A small set of glyphs for: SPACE, '-', A,C,E,G,
-  I,M,R,S,V (covers "RISC-V GAME").
-------------------------------------------------*/
+/*
+set of glyphs
+*/
 static constexpr std::array<std::pair<char,Glyph>, 32> glyphTable{{
     // Space
     {' ', {8,8,{ 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 }}},
@@ -17,7 +16,7 @@ static constexpr std::array<std::pair<char,Glyph>, 32> glyphTable{{
     {'?', {8,8,{ 0x3C,0x66,0x0C,0x18,0x18,0x00,0x18,0x00 }}},
     {'!', {8,8,{ 0x18,0x18,0x18,0x18,0x18,0x00,0x18,0x00 }}},
 
-    // Alphabet A–Z
+    // Alphabet A-Z
     {'A',{8,8,{ 0x18,0x3C,0x66,0x66,0x7E,0x66,0x66,0x00 }}},
     {'B',{8,8,{ 0x7C,0x66,0x66,0x7C,0x66,0x66,0x7C,0x00 }}},
     {'C',{8,8,{ 0x3C,0x66,0x60,0x60,0x60,0x66,0x3C,0x00 }}},
@@ -46,10 +45,12 @@ static constexpr std::array<std::pair<char,Glyph>, 32> glyphTable{{
     {'Z',{8,8,{ 0x7E,0x06,0x0C,0x18,0x30,0x60,0x7E,0x00 }}}
 }};
 
-/* blank glyph for any unsupported character */
+/*
+blank glyph for any unsupported character
+*/
 static constexpr Glyph emptyGlyph{8,8,{ 0,0,0,0,0,0,0,0 }};
 
-constexpr const Glyph& BitmapFont::getGlyph(char c) noexcept {
+const Glyph& BitmapFont::getGlyph(char c) noexcept {
     for (auto& [key,g] : glyphTable) {
         if (key == c) return g;
     }
@@ -67,7 +68,7 @@ void BitmapFont::drawText(std::uint8_t*    fb,
     int cursorX = x;
     for (char c : text) {
         const Glyph& g = getGlyph(c);
-        // draw 8×8 block
+        // draw 8-by-8 block
         for (int row = 0; row < g.height; ++row) {
             std::uint8_t bits = g.bitmap[static_cast<std::uint8_t>(row)];
             for (int col = 0; col < g.width; ++col) {

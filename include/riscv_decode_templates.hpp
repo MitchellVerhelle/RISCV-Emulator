@@ -7,11 +7,10 @@
 
 namespace rv::detail {
 
-/*--------------------------------------------------------------
- | Primary template – NO implementation on purpose.
- | Attempting to use Decoder<Opcode::XYZ>::decode() without a
- | matching specialisation triggers a compile‑time error.
- *-------------------------------------------------------------*/
+/*
+Primary template - NO implementation on purpose.
+Attempting to use Decoder<Opcode::XYZ>::decode() without a matching specialisation triggers a compile-time error.
+*/
 template <Opcode O>
 struct Decoder
 {
@@ -21,9 +20,9 @@ struct Decoder
     }
 };
 
-/*--------------------------------------------------------------
- |  Specialisations – one per primary opcode we understand
- *-------------------------------------------------------------*/
+/*
+Specialisations - one per primary opcode we understand
+*/
 template <>
 struct Decoder<Opcode::OP>
 {
@@ -48,10 +47,10 @@ struct Decoder<Opcode::OP_IMM>
 };
 
 template <>
-struct Decoder<Opcode::LOAD> : Decoder<Opcode::OP_IMM> {};   // same layout
+struct Decoder<Opcode::LOAD> : Decoder<Opcode::OP_IMM> {}; // same layout
 
 template <>
-struct Decoder<Opcode::JALR> : Decoder<Opcode::OP_IMM> {};   // same layout
+struct Decoder<Opcode::JALR> : Decoder<Opcode::OP_IMM> {}; // same layout
 
 template <>
 struct Decoder<Opcode::STORE>
@@ -60,8 +59,7 @@ struct Decoder<Opcode::STORE>
     {
         auto u5 = [](std::uint32_t x, int s){ return static_cast<std::uint8_t>((x>>s)&0x1F); };
         auto u3 = [](std::uint32_t x, int s){ return static_cast<std::uint8_t>((x>>s)&0x07); };
-        return SType{ u5(w,15), u5(w,20), u3(w,12),
-                      sign_extend( (u5(w,7)) | ((w>>25)<<5), 12) };
+        return SType{ u5(w,15), u5(w,20), u3(w,12), sign_extend( (u5(w,7)) | ((w>>25)<<5), 12) };
     }
 };
 
@@ -80,18 +78,55 @@ struct Decoder<Opcode::BRANCH>
     }
 };
 
-/*--------------------------------------------------------------
- |  Helper: one unique wrapper per opcode index
- *-------------------------------------------------------------*/
+template <>
+struct Decoder<Opcode::JAL>
+{
+    [[nodiscard]] static UJType decode(std::uint32_t w) noexcept
+    {
+        std::int32_t imm = sign_extend(((w >> 12) & 0xFF) << 12 |  // imm[19:12]
+                                       ((w >> 20) & 0x1) << 11 |   // imm[11]
+                                       ((w >> 21) & 0x3FF) << 1 |  // imm[10:1]
+                                       (w >> 31) << 20, 21);       // imm[20]
+        return UJType{ static_cast<std::uint8_t>((w >> 7) & 0x1F), imm }; // rd and imm
+    }
+};
+
+template <>
+struct Decoder<Opcode::LUI>
+{
+    [[nodiscard]] static UType decode(std::uint32_t w) noexcept
+    {
+        // rd = bits[11:7], imm = upper 20 bits << 12 (signed)
+        auto rd  = static_cast<std::uint8_t>((w >> 7) & 0x1F);
+        // high 20 bits are bits[31:12], low 12 are zero
+        std::int32_t imm = static_cast<std::int32_t>(w & 0xFFFFF000);
+        return UType{ rd, imm };
+    }
+};
+
+template <>
+struct Decoder<Opcode::AUIPC>
+{
+    [[nodiscard]] static UType decode(std::uint32_t w) noexcept
+    {
+        auto rd  = static_cast<std::uint8_t>((w >> 7) & 0x1F);
+        std::int32_t imm = static_cast<std::int32_t>(w & 0xFFFFF000);
+        return UType{ rd, imm };
+    }
+};
+
+/*
+Helper: one unique wrapper per opcode index
+*/
 template <std::size_t I>
 constexpr Instr decode_wrap(std::uint32_t w)
 {
     return Decoder<static_cast<Opcode>(I)>::decode(w);
 }
 
-/*--------------------------------------------------------------
- |   dispatch table -- Inspired by Matt Godbolt
- *-------------------------------------------------------------*/
+/*
+dispatch table - Inspired by Matt Godbolt
+*/
 template <std::size_t... Is>
 constexpr auto build_table(std::index_sequence<Is...>)
 {

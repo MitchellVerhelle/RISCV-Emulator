@@ -143,6 +143,80 @@ test_riscv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_riscv.dir/build.make CMakeFiles/test_riscv.dir/build
 .PHONY : test_riscv/fast
 
+#=============================================================================
+# Target rules for targets named cache_stats_demo
+
+# Build rule for target.
+cache_stats_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cache_stats_demo
+.PHONY : cache_stats_demo
+
+# fast build rule for target.
+cache_stats_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_stats_demo.dir/build.make CMakeFiles/cache_stats_demo.dir/build
+.PHONY : cache_stats_demo/fast
+
+#=============================================================================
+# Target rules for targets named parallel_stress
+
+# Build rule for target.
+parallel_stress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parallel_stress
+.PHONY : parallel_stress
+
+# fast build rule for target.
+parallel_stress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_stress.dir/build.make CMakeFiles/parallel_stress.dir/build
+.PHONY : parallel_stress/fast
+
+examples/cache_stats_demo.o: examples/cache_stats_demo.cpp.o
+.PHONY : examples/cache_stats_demo.o
+
+# target to build an object file
+examples/cache_stats_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_stats_demo.dir/build.make CMakeFiles/cache_stats_demo.dir/examples/cache_stats_demo.cpp.o
+.PHONY : examples/cache_stats_demo.cpp.o
+
+examples/cache_stats_demo.i: examples/cache_stats_demo.cpp.i
+.PHONY : examples/cache_stats_demo.i
+
+# target to preprocess a source file
+examples/cache_stats_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_stats_demo.dir/build.make CMakeFiles/cache_stats_demo.dir/examples/cache_stats_demo.cpp.i
+.PHONY : examples/cache_stats_demo.cpp.i
+
+examples/cache_stats_demo.s: examples/cache_stats_demo.cpp.s
+.PHONY : examples/cache_stats_demo.s
+
+# target to generate assembly for a file
+examples/cache_stats_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_stats_demo.dir/build.make CMakeFiles/cache_stats_demo.dir/examples/cache_stats_demo.cpp.s
+.PHONY : examples/cache_stats_demo.cpp.s
+
+examples/parallel_stress.o: examples/parallel_stress.cpp.o
+.PHONY : examples/parallel_stress.o
+
+# target to build an object file
+examples/parallel_stress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_stress.dir/build.make CMakeFiles/parallel_stress.dir/examples/parallel_stress.cpp.o
+.PHONY : examples/parallel_stress.cpp.o
+
+examples/parallel_stress.i: examples/parallel_stress.cpp.i
+.PHONY : examples/parallel_stress.i
+
+# target to preprocess a source file
+examples/parallel_stress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_stress.dir/build.make CMakeFiles/parallel_stress.dir/examples/parallel_stress.cpp.i
+.PHONY : examples/parallel_stress.cpp.i
+
+examples/parallel_stress.s: examples/parallel_stress.cpp.s
+.PHONY : examples/parallel_stress.s
+
+# target to generate assembly for a file
+examples/parallel_stress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_stress.dir/build.make CMakeFiles/parallel_stress.dir/examples/parallel_stress.cpp.s
+.PHONY : examples/parallel_stress.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -214,30 +288,6 @@ src/cache_stats.s: src/cache_stats.cpp.s
 src/cache_stats.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s
 .PHONY : src/cache_stats.cpp.s
-
-src/graphics.o: src/graphics.cpp.o
-.PHONY : src/graphics.o
-
-# target to build an object file
-src/graphics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.o
-.PHONY : src/graphics.cpp.o
-
-src/graphics.i: src/graphics.cpp.i
-.PHONY : src/graphics.i
-
-# target to preprocess a source file
-src/graphics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.i
-.PHONY : src/graphics.cpp.i
-
-src/graphics.s: src/graphics.cpp.s
-.PHONY : src/graphics.s
-
-# target to generate assembly for a file
-src/graphics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.s
-.PHONY : src/graphics.cpp.s
 
 src/hash_table.o: src/hash_table.cpp.o
 .PHONY : src/hash_table.o
@@ -367,8 +417,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... cache_stats_demo"
+	@echo "... parallel_stress"
 	@echo "... riscvcpp"
 	@echo "... test_riscv"
+	@echo "... examples/cache_stats_demo.o"
+	@echo "... examples/cache_stats_demo.i"
+	@echo "... examples/cache_stats_demo.s"
+	@echo "... examples/parallel_stress.o"
+	@echo "... examples/parallel_stress.i"
+	@echo "... examples/parallel_stress.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -378,9 +436,6 @@ help:
 	@echo "... src/cache_stats.o"
 	@echo "... src/cache_stats.i"
 	@echo "... src/cache_stats.s"
-	@echo "... src/graphics.o"
-	@echo "... src/graphics.i"
-	@echo "... src/graphics.s"
 	@echo "... src/hash_table.o"
 	@echo "... src/hash_table.i"
 	@echo "... src/hash_table.s"

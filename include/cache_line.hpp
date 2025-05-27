@@ -11,7 +11,7 @@ struct CacheLine
     bool          valid{false};
     bool          dirty{false};
 
-    std::array<std::uint32_t, 4> words{};   // 16‑byte line (4×32‑bit)
+    std::array<std::uint32_t, 4> words{}; // 16-byte line (4-by-32-bit)
 
     void reset() noexcept { valid = dirty = false; }
 };

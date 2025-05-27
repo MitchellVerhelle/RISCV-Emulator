@@ -215,30 +215,6 @@ src/emulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rv_game.dir/build.make CMakeFiles/rv_game.dir/src/emulator.cpp.s
 .PHONY : src/emulator.cpp.s
 
-src/graphics.o: src/graphics.cpp.o
-.PHONY : src/graphics.o
-
-# target to build an object file
-src/graphics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.o
-.PHONY : src/graphics.cpp.o
-
-src/graphics.i: src/graphics.cpp.i
-.PHONY : src/graphics.i
-
-# target to preprocess a source file
-src/graphics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.i
-.PHONY : src/graphics.cpp.i
-
-src/graphics.s: src/graphics.cpp.s
-.PHONY : src/graphics.s
-
-# target to generate assembly for a file
-src/graphics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/graphics.cpp.s
-.PHONY : src/graphics.cpp.s
-
 src/hash_table.o: src/hash_table.cpp.o
 .PHONY : src/hash_table.o
 
@@ -359,6 +335,30 @@ src/sdl_frontend.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rv_game.dir/build.make CMakeFiles/rv_game.dir/src/sdl_frontend.cpp.s
 .PHONY : src/sdl_frontend.cpp.s
 
+src/sdl_frontend_inProgress.o: src/sdl_frontend_inProgress.cpp.o
+.PHONY : src/sdl_frontend_inProgress.o
+
+# target to build an object file
+src/sdl_frontend_inProgress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o
+.PHONY : src/sdl_frontend_inProgress.cpp.o
+
+src/sdl_frontend_inProgress.i: src/sdl_frontend_inProgress.cpp.i
+.PHONY : src/sdl_frontend_inProgress.i
+
+# target to preprocess a source file
+src/sdl_frontend_inProgress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.i
+.PHONY : src/sdl_frontend_inProgress.cpp.i
+
+src/sdl_frontend_inProgress.s: src/sdl_frontend_inProgress.cpp.s
+.PHONY : src/sdl_frontend_inProgress.s
+
+# target to generate assembly for a file
+src/sdl_frontend_inProgress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.s
+.PHONY : src/sdl_frontend_inProgress.cpp.s
+
 src/text/bitmap_font.o: src/text/bitmap_font.cpp.o
 .PHONY : src/text/bitmap_font.o
 
@@ -402,9 +402,6 @@ help:
 	@echo "... src/emulator.o"
 	@echo "... src/emulator.i"
 	@echo "... src/emulator.s"
-	@echo "... src/graphics.o"
-	@echo "... src/graphics.i"
-	@echo "... src/graphics.s"
 	@echo "... src/hash_table.o"
 	@echo "... src/hash_table.i"
 	@echo "... src/hash_table.s"
@@ -420,6 +417,9 @@ help:
 	@echo "... src/sdl_frontend.o"
 	@echo "... src/sdl_frontend.i"
 	@echo "... src/sdl_frontend.s"
+	@echo "... src/sdl_frontend_inProgress.o"
+	@echo "... src/sdl_frontend_inProgress.i"
+	@echo "... src/sdl_frontend_inProgress.s"
 	@echo "... src/text/bitmap_font.o"
 	@echo "... src/text/bitmap_font.i"
 	@echo "... src/text/bitmap_font.s"

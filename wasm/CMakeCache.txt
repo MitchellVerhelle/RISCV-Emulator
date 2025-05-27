@@ -197,6 +197,32 @@ EMSCRIPTEN_FORCE_COMPILERS:BOOL=ON
 // If disabled (default), UNIX ar archives (.a) are generated.
 EMSCRIPTEN_GENERATE_BITCODE_STATIC_LIBRARIES:BOOL=OFF
 
+//Build WebAssembly with pthread support
+ENABLE_PTHREADS:BOOL=ON
+
+//Directory under which to collect all populated content
+FETCHCONTENT_BASE_DIR:PATH=/Users/mitchellverhelle/C++ Class/Emulator/wasm/_deps
+
+//Disables all attempts to download or update content and assumes
+// source dirs already exist
+FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+
+//Enables QUIET option for all content population
+FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for ctre
+FETCHCONTENT_SOURCE_DIR_CTRE:PATH=
+
+//Enables UPDATE_DISCONNECTED behavior for all content population
+FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of ctre
+FETCHCONTENT_UPDATES_DISCONNECTED_CTRE:BOOL=OFF
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/opt/homebrew/bin/git
+
 //Value Computed by CMake
 RISCVCpp_BINARY_DIR:STATIC=/Users/mitchellverhelle/C++ Class/Emulator/wasm
 
@@ -206,7 +232,7 @@ RISCVCpp_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 RISCVCpp_SOURCE_DIR:STATIC=/Users/mitchellverhelle/C++ Class/Emulator
 
-//Enable thread‑safe cache lines
+//Enable thread-safe cache lines
 USE_THREADS:BOOL=ON
 
 
@@ -331,4 +357,6 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //If true, we are targeting Emscripten output.
 EMSCRIPTEN:INTERNAL=1
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 

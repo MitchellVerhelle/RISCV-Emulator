@@ -268,3 +268,248 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:252 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:522 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-n4c9Hh"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-n4c9Hh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-n4c9Hh'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a8b50/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a8b50.dir/build.make CMakeFiles/cmTC_a8b50.dir/build
+        Building CXX object CMakeFiles/cmTC_a8b50.dir/OpenMPTryFlag.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++   -Xclang -fopenmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -MD -MT CMakeFiles/cmTC_a8b50.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_a8b50.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_a8b50.dir/OpenMPTryFlag.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-n4c9Hh/OpenMPTryFlag.cpp"
+        /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-n4c9Hh/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_a8b50.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_a8b50/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:354 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:522 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "Trying CXX OpenMP compiler with '/opt/homebrew/opt/libomp/lib/libomp.dylib'"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-2in8jX"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-2in8jX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-2in8jX'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1f4d9/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1f4d9.dir/build.make CMakeFiles/cmTC_1f4d9.dir/build
+        Building CXX object CMakeFiles/cmTC_1f4d9.dir/OpenMPTryFlag.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6   -Xclang -fopenmp -MD -MT CMakeFiles/cmTC_1f4d9.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_1f4d9.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_1f4d9.dir/OpenMPTryFlag.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-2in8jX/OpenMPTryFlag.cpp"
+        /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-2in8jX/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_1f4d9.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_1f4d9/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:365 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:522 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "Trying CXX OpenMP compiler with '/opt/homebrew/opt/libomp/lib/libomp.dylib' and '/opt/homebrew/opt/libomp/include'"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-XNAeYg"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-XNAeYg"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-XNAeYg'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cd5dd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cd5dd.dir/build.make CMakeFiles/cmTC_cd5dd.dir/build
+        Building CXX object CMakeFiles/cmTC_cd5dd.dir/OpenMPTryFlag.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -I/opt/homebrew/opt/libomp/include -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6   -Xclang -fopenmp -MD -MT CMakeFiles/cmTC_cd5dd.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_cd5dd.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_cd5dd.dir/OpenMPTryFlag.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-XNAeYg/OpenMPTryFlag.cpp"
+        Linking CXX executable cmTC_cd5dd
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd5dd.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cd5dd.dir/OpenMPTryFlag.cpp.o -o cmTC_cd5dd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:456 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:596 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-gGPo7w"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-gGPo7w"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-gGPo7w'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_672fd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_672fd.dir/build.make CMakeFiles/cmTC_672fd.dir/build
+        Building CXX object CMakeFiles/cmTC_672fd.dir/OpenMPCheckVersion.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -MD -MT CMakeFiles/cmTC_672fd.dir/OpenMPCheckVersion.cpp.o -MF CMakeFiles/cmTC_672fd.dir/OpenMPCheckVersion.cpp.o.d -o CMakeFiles/cmTC_672fd.dir/OpenMPCheckVersion.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-gGPo7w/OpenMPCheckVersion.cpp"
+        Linking CXX executable cmTC_672fd
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_672fd.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -Xclang -fopenmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_672fd.dir/OpenMPCheckVersion.cpp.o -o cmTC_672fd
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/opt/homebrew/Cellar/onedpl/2022.8.0/lib/cmake/oneDPL/oneDPLConfig.cmake:123 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:15 (find_package)"
+    checks:
+      - "Performing Test _fsycl_option"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-zWpsf7"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-zWpsf7"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "_fsycl_option"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-zWpsf7'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ecd62/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ecd62.dir/build.make CMakeFiles/cmTC_ecd62.dir/build
+        Building CXX object CMakeFiles/cmTC_ecd62.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -D_fsycl_option  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6   -fsycl -MD -MT CMakeFiles/cmTC_ecd62.dir/src.cxx.o -MF CMakeFiles/cmTC_ecd62.dir/src.cxx.o.d -o CMakeFiles/cmTC_ecd62.dir/src.cxx.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-zWpsf7/src.cxx"
+        Linking CXX executable cmTC_ecd62
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ecd62.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ecd62.dir/src.cxx.o -o cmTC_ecd62
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFileCXX.cmake:98 (try_compile)"
+      - "/opt/homebrew/Cellar/onedpl/2022.8.0/lib/cmake/oneDPL/oneDPLConfig.cmake:128 (CHECK_INCLUDE_FILE_CXX)"
+      - "CMakeLists.txt:15 (find_package)"
+    checks:
+      - "Looking for C++ include sycl/sycl.hpp"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-H6CAUE"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-H6CAUE"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fsycl"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "SYCL_HEADER"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-H6CAUE'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_20246/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_20246.dir/build.make CMakeFiles/cmTC_20246.dir/build
+        Building CXX object CMakeFiles/cmTC_20246.dir/CheckIncludeFile.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++   -fsycl  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -MD -MT CMakeFiles/cmTC_20246.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_20246.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_20246.dir/CheckIncludeFile.cxx.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-H6CAUE/CheckIncludeFile.cxx"
+        /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-H6CAUE/CheckIncludeFile.cxx:1:10: fatal error: 'sycl/sycl.hpp' file not found
+        #include <sycl/sycl.hpp>
+                 ^~~~~~~~~~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_20246.dir/CheckIncludeFile.cxx.o] Error 1
+        make: *** [cmTC_20246/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFileCXX.cmake:98 (try_compile)"
+      - "/opt/homebrew/Cellar/onedpl/2022.8.0/lib/cmake/oneDPL/oneDPLConfig.cmake:130 (CHECK_INCLUDE_FILE_CXX)"
+      - "CMakeLists.txt:15 (find_package)"
+    checks:
+      - "Looking for C++ include CL/sycl.hpp"
+    directories:
+      source: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-wqPaeN"
+      binary: "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-wqPaeN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fsycl"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.6"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "SYCL_HEADER_OLD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-wqPaeN'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_999be/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_999be.dir/build.make CMakeFiles/cmTC_999be.dir/build
+        Building CXX object CMakeFiles/cmTC_999be.dir/CheckIncludeFile.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++   -fsycl  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -MD -MT CMakeFiles/cmTC_999be.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_999be.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_999be.dir/CheckIncludeFile.cxx.o -c "/Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-wqPaeN/CheckIncludeFile.cxx"
+        /Users/mitchellverhelle/C++ Class/Emulator/build/CMakeFiles/CMakeScratch/TryCompile-wqPaeN/CheckIncludeFile.cxx:1:10: fatal error: 'CL/sycl.hpp' file not found
+        #include <CL/sycl.hpp>
+                 ^~~~~~~~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_999be.dir/CheckIncludeFile.cxx.o] Error 1
+        make: *** [cmTC_999be/fast] Error 2
+        
+      exitCode: 2
+...

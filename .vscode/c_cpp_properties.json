@@ -8,7 +8,11 @@
                 "${env:HOME}/emsdk/upstream/emscripten/system/include",
                 "${env:HOME}/emsdk/upstream/emscripten/system/lib/libcxx/include",
                 "${env:HOME}/emsdk/upstream/emscripten/cache/sysroot/include",
-                "${env:HOME}/emsdk/upstream/emscripten/cache/sysroot/include/SDL"
+                "${env:HOME}/emsdk/upstream/emscripten/cache/sysroot/include/SDL",
+                "~/vcpkg/installed/arm64-osx/include",
+                "/opt/homebrew/Cellar/onedpl/2022.8.0/include",
+                "/opt/homebrew/Cellar/tbb/2022.1.0/include",
+                "/opt/homebrew/Cellar/llvm/20.1.2/include/c++/v1"
             ],
             "defines": [
                 "__EMSCRIPTEN__"

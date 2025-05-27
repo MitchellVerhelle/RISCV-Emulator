@@ -8,7 +8,7 @@ inline void tick(void* /*userdata*/)
 {
     static int frame = 0;
     if ((frame++ & 63) == 0)                  // print once per 64 frames
-        std::puts("demo main‑loop is alive");
+        std::puts("demo main-loop is alive");
 }
 
 inline void install_main_loop()

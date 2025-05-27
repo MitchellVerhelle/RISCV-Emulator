@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/rv_game.dir/includes_CXX.rsp
 
-CXX_FLAGS = -std=gnu++23 -Wall -Wextra -Wpedantic -Wconversion -sUSE_SDL=2 -sEXCEPTION_CATCHING_ALLOWED=all
+CXX_FLAGS = -std=gnu++23 -Wall -Wextra -Wpedantic -Wconversion -sUSE_SDL=2 -sEXCEPTION_CATCHING_ALLOWED=all -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=4 -O3
 

@@ -8,11 +8,10 @@
 
 namespace rv {
 
-/** Open‑addressing hash table (linear probing). */
-template <
-    typename K, typename V,
-    typename Hash = std::hash<K>,
-    typename KeyEq = std::equal_to<K>>
+/*
+Open-addressing hash table (linear probing).
+*/
+template < typename K, typename V, typename Hash = std::hash<K>, typename KeyEq = std::equal_to<K>>
 class HashTable : public MemoryBus
 {
     enum class BucketState : std::uint8_t { empty, full, tomb };
@@ -26,7 +25,9 @@ class HashTable : public MemoryBus
     explicit HashTable(std::size_t cap = 64)
         : buckets_(cap) {}
 
-    /* MemoryBus interface – drive by key = address.                    */
+    /*
+    MemoryBus interface; drive by key = address.
+    */
     std::optional<std::uint32_t> load_word(std::uint32_t addr) override
     {
         if (auto opt = get(static_cast<K>(addr))) return *opt;
@@ -37,7 +38,9 @@ class HashTable : public MemoryBus
         put(static_cast<K>(addr), static_cast<V>(val)); return true;
     }
 
-    /* Standard map‑like interface                                      */
+    /*
+    Standard map-like interface
+    */
     [[nodiscard]] std::optional<V> get(const K& key) const
     {
         auto idx = probe(key);
@@ -68,9 +71,9 @@ class HashTable : public MemoryBus
     inline void maybe_rehash()
     {
         constexpr float max_load = 0.75f;
-        if (static_cast<float>(size_) /
-            static_cast<float>(buckets_.size()) < max_load)
-            return;
+        if (static_cast<float>(size_) / static_cast<float>(buckets_.size()) < max_load) {
+            return; // no need to rehash
+        }
 
         std::vector<Bucket> old = std::move(buckets_);
         buckets_.assign(old.size()*2, {});
@@ -85,9 +88,9 @@ class HashTable : public MemoryBus
         std::size_t mask = buckets_.size() - 1;
         std::size_t i    = hasher_(key) & mask;
 
-        while (buckets_[i].st != BucketState::empty &&
-               (buckets_[i].st == BucketState::tomb || !eq_(buckets_[i].key, key)))
+        while (buckets_[i].st != BucketState::empty && (buckets_[i].st == BucketState::tomb || !eq_(buckets_[i].key, key))) {
             i = (i + 1) & mask;
+        }
         return i;
     }
 };

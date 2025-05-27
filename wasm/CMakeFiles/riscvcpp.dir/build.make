@@ -102,26 +102,11 @@ CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mitchellverhelle/C++ Class/Emulator/src/cache_stats.cpp" -o CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.s
 
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.o: CMakeFiles/riscvcpp.dir/flags.make
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/graphics.cpp
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/riscvcpp.dir/src/graphics.cpp.o"
-	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/graphics.cpp.o -MF CMakeFiles/riscvcpp.dir/src/graphics.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/graphics.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/graphics.cpp"
-
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/riscvcpp.dir/src/graphics.cpp.i"
-	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mitchellverhelle/C++ Class/Emulator/src/graphics.cpp" > CMakeFiles/riscvcpp.dir/src/graphics.cpp.i
-
-CMakeFiles/riscvcpp.dir/src/graphics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/riscvcpp.dir/src/graphics.cpp.s"
-	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mitchellverhelle/C++ Class/Emulator/src/graphics.cpp" -o CMakeFiles/riscvcpp.dir/src/graphics.cpp.s
-
 CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o: CMakeFiles/riscvcpp.dir/flags.make
 CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
 CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/hash_table.cpp
 CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o -MF CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/hash_table.cpp"
 
 CMakeFiles/riscvcpp.dir/src/hash_table.cpp.i: cmake_force
@@ -136,7 +121,7 @@ CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o: CMakeFiles/riscvcpp.dir/flags.mak
 CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
 CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/linked_list.cpp
 CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o -MF CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/linked_list.cpp"
 
 CMakeFiles/riscvcpp.dir/src/linked_list.cpp.i: cmake_force
@@ -151,7 +136,7 @@ CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o: CMakeFiles/riscvcpp.dir/flags.mak
 CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
 CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/mmio_window.cpp
 CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o -MF CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/mmio_window.cpp"
 
 CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.i: cmake_force
@@ -166,7 +151,7 @@ CMakeFiles/riscvcpp.dir/src/riscv.cpp.o: CMakeFiles/riscvcpp.dir/flags.make
 CMakeFiles/riscvcpp.dir/src/riscv.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
 CMakeFiles/riscvcpp.dir/src/riscv.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/riscv.cpp
 CMakeFiles/riscvcpp.dir/src/riscv.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/riscvcpp.dir/src/riscv.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/riscvcpp.dir/src/riscv.cpp.o"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/riscv.cpp.o -MF CMakeFiles/riscvcpp.dir/src/riscv.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/riscv.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/riscv.cpp"
 
 CMakeFiles/riscvcpp.dir/src/riscv.cpp.i: cmake_force
@@ -176,6 +161,21 @@ CMakeFiles/riscvcpp.dir/src/riscv.cpp.i: cmake_force
 CMakeFiles/riscvcpp.dir/src/riscv.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/riscvcpp.dir/src/riscv.cpp.s"
 	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mitchellverhelle/C++ Class/Emulator/src/riscv.cpp" -o CMakeFiles/riscvcpp.dir/src/riscv.cpp.s
+
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o: CMakeFiles/riscvcpp.dir/flags.make
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o: /Users/mitchellverhelle/C++\ Class/Emulator/src/sdl_frontend_inProgress.cpp
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o: CMakeFiles/riscvcpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o"
+	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o -MF CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o.d -o CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o -c "/Users/mitchellverhelle/C++ Class/Emulator/src/sdl_frontend_inProgress.cpp"
+
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.i"
+	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mitchellverhelle/C++ Class/Emulator/src/sdl_frontend_inProgress.cpp" > CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.i
+
+CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.s"
+	/Users/mitchellverhelle/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mitchellverhelle/C++ Class/Emulator/src/sdl_frontend_inProgress.cpp" -o CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.s
 
 CMakeFiles/riscvcpp.dir/src/text/bitmap_font.cpp.o: CMakeFiles/riscvcpp.dir/flags.make
 CMakeFiles/riscvcpp.dir/src/text/bitmap_font.cpp.o: CMakeFiles/riscvcpp.dir/includes_CXX.rsp
@@ -196,11 +196,11 @@ CMakeFiles/riscvcpp.dir/src/text/bitmap_font.cpp.s: cmake_force
 riscvcpp_OBJECTS = \
 "CMakeFiles/riscvcpp.dir/src/cache.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.o" \
-"CMakeFiles/riscvcpp.dir/src/graphics.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/riscv.cpp.o" \
+"CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o" \
 "CMakeFiles/riscvcpp.dir/src/text/bitmap_font.cpp.o"
 
 # External object files for target riscvcpp
@@ -208,11 +208,11 @@ riscvcpp_EXTERNAL_OBJECTS =
 
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/cache.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/cache_stats.cpp.o
-libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/graphics.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/hash_table.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/linked_list.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/mmio_window.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/riscv.cpp.o
+libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/sdl_frontend_inProgress.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/src/text/bitmap_font.cpp.o
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/build.make
 libriscvcpp.a: CMakeFiles/riscvcpp.dir/link.txt

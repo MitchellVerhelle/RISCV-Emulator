@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/ctre-populate"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/ctre-populate.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/CMakeFiles/ctre-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-build.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-download.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-install.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-test.rule"
+		},
+		{
+			"file" : "/Users/mitchellverhelle/C++ Class/Emulator/build/_deps/ctre-subbuild/ctre-populate-prefix/src/ctre-populate-stamp/ctre-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ctre-populate"
+		],
+		"name" : "ctre-populate"
+	}
+}

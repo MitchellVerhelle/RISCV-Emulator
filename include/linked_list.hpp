@@ -5,21 +5,26 @@
 
 namespace rv {
 
-/** Single‑linked list node — RAII, allocator‑aware. */
+/*
+Single-linked list node with RAII, allocator-aware.
+*/
 template <typename K, typename V>
 struct ListNode
 {
-    K         key;
-    V         val;
+    K key;
+    V val;
     std::unique_ptr<ListNode> next{};
 
-    ListNode(const K& k, const V& v) : key{k}, val{v} {}
-    ListNode(K&& k, V&& v) noexcept(std::is_nothrow_move_constructible_v<K> &&
-                                    std::is_nothrow_move_constructible_v<V>)
+    ListNode(const K& k, const V& v)
+        : key{k}, val{v} {}
+    
+    ListNode(K&& k, V&& v) noexcept(std::is_nothrow_move_constructible_v<K> && std::is_nothrow_move_constructible_v<V>)
         : key{std::move(k)}, val{std::move(v)} {}
 };
 
-/** Minimal forward‑list map used by the open‑hash buckets (non‑thread‑safe). */
+/*
+Minimal forward-list map used by the open-hash buckets (non-thread-safe).
+*/
 template <typename K, typename V>
 class LinkedList
 {
@@ -31,7 +36,9 @@ class LinkedList
         return std::nullopt;
     }
 
-    /** Insert or assign.  Returns true if replaced, false if added. */
+    /*
+    Insert or assign.  Returns true if replaced, false if added.
+    */
     bool put(const K& key, const V& val)
     {
         for (auto* n = head_.get(); n; n = n->next.get())
