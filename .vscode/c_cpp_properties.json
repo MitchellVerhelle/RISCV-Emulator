@@ -5,14 +5,10 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${vcpkgRoot}/arm64-osx/include",
-                "~/emsdk/upstream/emscripten/system/include",
-                "~/emsdk/upstream/emscripten/system/lib/libcxx/include",
-                "~/emsdk/upstream/emscripten/cache/sysroot/include",
-                "~/emsdk/upstream/emscripten/cache/sysroot/include/SDL"
-                // "${env:EMSDK}/upstream/emscripten/system/include",
-                // "${env:EMSDK}/upstream/emscripten/system/lib/libcxx/include",
-                // "${env:EMSDK}/upstream/emscripten/cache/sysroot/include",
-                // "${env:EMSDK}/upstream/emscripten/cache/sysroot/include/SDL"
+                "${env:HOME}/emsdk/upstream/emscripten/system/include",
+                "${env:HOME}/emsdk/upstream/emscripten/system/lib/libcxx/include",
+                "${env:HOME}/emsdk/upstream/emscripten/cache/sysroot/include",
+                "${env:HOME}/emsdk/upstream/emscripten/cache/sysroot/include/SDL"
             ],
             "defines": [
                 "__EMSCRIPTEN__"

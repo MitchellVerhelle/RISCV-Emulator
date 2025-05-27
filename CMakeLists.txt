@@ -14,7 +14,7 @@ add_compile_options(-Wall -Wextra -Wpedantic -Wconversion)
 # -----------------------------------------------------------
 #  Source files (one static library)
 # -----------------------------------------------------------
-file(GLOB SRC CONFIGURE_DEPENDS "src/*.cpp")
+file(GLOB_RECURSE SRC CONFIGURE_DEPENDS "src/*.cpp")
 list(REMOVE_ITEM SRC
      ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl_frontend.cpp
      ${CMAKE_CURRENT_SOURCE_DIR}/src/emulator.cpp)
@@ -62,7 +62,7 @@ else()
         "-sASYNCIFY"
         "-sALLOW_MEMORY_GROWTH"
         "-sEXPORTED_RUNTIME_METHODS=['ccall','cwrap']"
-        "-sEXPORTED_FUNCTIONS=['_start_game']")
+        "-sEXPORTED_FUNCTIONS=['_main']")
 endif()
 
 

@@ -88,12 +88,12 @@ clean: CMakeFiles/rv_game.dir/clean
 CMakeFiles/riscvcpp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target riscvcpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Built target riscvcpp"
 .PHONY : CMakeFiles/riscvcpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/riscvcpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 7
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/riscvcpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 0
 .PHONY : CMakeFiles/riscvcpp.dir/rule
@@ -105,7 +105,7 @@ riscvcpp: CMakeFiles/riscvcpp.dir/rule
 # codegen rule for target.
 CMakeFiles/riscvcpp.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riscvcpp.dir/build.make CMakeFiles/riscvcpp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Finished codegen for target riscvcpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Finished codegen for target riscvcpp"
 .PHONY : CMakeFiles/riscvcpp.dir/codegen
 
 # clean rule for target.
@@ -120,12 +120,12 @@ CMakeFiles/riscvcpp.dir/clean:
 CMakeFiles/rv_game.dir/all: CMakeFiles/riscvcpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rv_game.dir/build.make CMakeFiles/rv_game.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rv_game.dir/build.make CMakeFiles/rv_game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=8,9,10 "Built target rv_game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=10,11,12 "Built target rv_game"
 .PHONY : CMakeFiles/rv_game.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rv_game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 10
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rv_game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" 0
 .PHONY : CMakeFiles/rv_game.dir/rule
@@ -137,7 +137,7 @@ rv_game: CMakeFiles/rv_game.dir/rule
 # codegen rule for target.
 CMakeFiles/rv_game.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rv_game.dir/build.make CMakeFiles/rv_game.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=8,9,10 "Finished codegen for target rv_game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/mitchellverhelle/C++ Class/Emulator/wasm/CMakeFiles" --progress-num=10,11,12 "Finished codegen for target rv_game"
 .PHONY : CMakeFiles/rv_game.dir/codegen
 
 # clean rule for target.

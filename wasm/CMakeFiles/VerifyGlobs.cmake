@@ -3,16 +3,18 @@
 cmake_policy(SET CMP0009 NEW)
 
 # SRC at CMakeLists.txt:17 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/mitchellverhelle/C++ Class/Emulator/src/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/mitchellverhelle/C++ Class/Emulator/src/*.cpp")
 set(OLD_GLOB
   "/Users/mitchellverhelle/C++ Class/Emulator/src/cache.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/cache_stats.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/emulator.cpp"
+  "/Users/mitchellverhelle/C++ Class/Emulator/src/graphics.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/hash_table.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/linked_list.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/mmio_window.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/riscv.cpp"
   "/Users/mitchellverhelle/C++ Class/Emulator/src/sdl_frontend.cpp"
+  "/Users/mitchellverhelle/C++ Class/Emulator/src/text/bitmap_font.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

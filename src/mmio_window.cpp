@@ -6,7 +6,7 @@ std::optional<std::uint32_t>
 MmioWindow::load_word(std::uint32_t a)
 {
     if (a == 0x2000'2000) return gpio_in;
-    return next_->load_word(a);                 // delegate
+    return next_->load_word(a);                  // delegate
 }
 
 bool MmioWindow::store_word(std::uint32_t a, std::uint32_t v)

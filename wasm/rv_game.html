@@ -20,7 +20,7 @@ canvas.emscripten { border: 0px none; background-color: black; }
   display: inline-block;
   margin: 0;
   padding: 6px;
-  width: 0px;
+  width: 265px;
 }
 
 .spinner {
@@ -196,21 +196,5 @@ canvas.emscripten { border: 0px none; background-color: black; }
       };
     </script>
     <script async type="text/javascript" src="rv_game.js"></script>
-    <button id="startBtn">Start Game</button>
-
-    <script>
-      const btn     = document.getElementById('startBtn');
-      const canvas  = document.getElementById('canvas');
-      canvas.style.display = 'none';
-
-      // Emscripten sets this when it’s done loading the wasm
-      Module.onRuntimeInitialized = () => {
-        btn.onclick = () => {
-          btn.style.display    = 'none';
-          canvas.style.display = '';
-          Module.ccall('start_game');       // now the symbol exists
-        };
-      };
-    </script>
   </body>
 </html>

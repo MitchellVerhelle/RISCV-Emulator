@@ -52,15 +52,15 @@ void RiscV::step()
             const std::uint32_t addr = regs_[d.rs1] + static_cast<std::uint32_t>(d.imm);
 
             switch (d.funct3) {
-                case 0b000:  // SB  (store byte)  – optional
+                case 0b000:  // SB (store byte) – optional
                     mem_.store_word(addr, regs_[d.rs2] & 0xFF);
                     break;
 
-                case 0b001:  // SH  (store half‑word) – optional
+                case 0b001:  // SH (store half‑word) – optional
                     mem_.store_word(addr, regs_[d.rs2] & 0xFFFF);
                     break;
 
-                case 0b010:  // **SW (store word)**
+                case 0b010:  // SW (store word)
                     mem_.store_word(addr, regs_[d.rs2]);
                     break;
 
@@ -73,12 +73,12 @@ void RiscV::step()
         {
             bool take{};
             switch (d.funct3) {
-                case 0:  take = regs_[d.rs1] == regs_[d.rs2]; break;          // BEQ
-                case 1:  take = regs_[d.rs1] != regs_[d.rs2]; break;          // BNE
+                case 0:  take = regs_[d.rs1] == regs_[d.rs2]; break; // BEQ
+                case 1:  take = regs_[d.rs1] != regs_[d.rs2]; break; // BNE
                 case 4:  take = static_cast<int32_t>(regs_[d.rs1]) <  static_cast<int32_t>(regs_[d.rs2]); break; // BLT
                 case 5:  take = static_cast<int32_t>(regs_[d.rs1]) >= static_cast<int32_t>(regs_[d.rs2]); break; // BGE
-                case 6:  take = regs_[d.rs1]           <  regs_[d.rs2]; break; // BLTU
-                case 7:  take = regs_[d.rs1]           >= regs_[d.rs2]; break; // BGEU
+                case 6:  take = regs_[d.rs1] <  regs_[d.rs2]; break; // BLTU
+                case 7:  take = regs_[d.rs1] >= regs_[d.rs2]; break; // BGEU
                 default: throw std::runtime_error("Unimpl BRANCH funct3");
             }
             pc_ += static_cast<std::uint32_t>( take ? d.imm : 4 );

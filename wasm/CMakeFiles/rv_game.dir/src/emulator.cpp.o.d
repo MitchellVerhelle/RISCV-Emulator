@@ -617,4 +617,6 @@ CMakeFiles/rv_game.dir/src/emulator.cpp.o: \
   /Users/mitchellverhelle/emsdk/upstream/emscripten/cache/sysroot/include/assert.h \
   /Users/mitchellverhelle/C++\ Class/Emulator/include/riscv.hpp \
   /Users/mitchellverhelle/C++\ Class/Emulator/include/riscv_decode_templates.hpp \
-  /Users/mitchellverhelle/C++\ Class/Emulator/include/riscv_types.hpp
+  /Users/mitchellverhelle/C++\ Class/Emulator/include/riscv_types.hpp \
+  /Users/mitchellverhelle/C++\ Class/Emulator/include/graphics.hpp \
+  /Users/mitchellverhelle/C++\ Class/Emulator/include/text/bitmap_font.hpp
